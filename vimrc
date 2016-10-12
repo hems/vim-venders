@@ -197,7 +197,10 @@ nmap SO :wa<CR>:so ~/.vim/session/
 " Splits
 map SP :wa<CR>:sp<CR>
 map VS :wa<CR>:vs<CR>
+
+" Q will quit if not in edit mode
 map Q  :wa<CR>:q<CR>
+
 " Tri-Split
 nmap SSS :wa<CR>:vs<CR><C-w><C-l>:sp<CR><C-w><C-h>:exe ":echo 'Pew pew pew!'"<CR>
 
