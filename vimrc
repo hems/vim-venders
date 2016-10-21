@@ -236,6 +236,8 @@ vmap < <gv
 " NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
+map ff :NERDTreeFind<CR>
+
 let NERDChristmasTree=1
 let NERDTreeHighlightCursorline=1
 let NERDTreeShowBookmarks=1
@@ -251,11 +253,6 @@ imap <c-c> <esc><plug>NERDCommenterToggle<cr>a
 " Exuberant CTags
 map <Leader>l :TlistToggle<CR>
 map <Leader>m :TagbarToggle<CR>
-
-" Command-T
-map <Leader>t :CommandT<CR>
-let g:CommandTMatchWindowAtTop=0
-let g:CommandTMaxHeight=20
 
 " Ctrlp
 map CC :CtrlPClearCache<CR>
