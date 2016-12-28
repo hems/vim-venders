@@ -46,6 +46,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
 Bundle 'Raimondi/delimitMate'
 Bundle 'vobornik/vim-mql4'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'junegunn/vim-easy-align'
 
 " hems remix
 
@@ -255,11 +257,18 @@ imap <c-c> <esc><plug>NERDCommenterToggle<cr>a
 map <Leader>l :TlistToggle<CR>
 map <Leader>m :TagbarToggle<CR>
 
-" Ctrlp
+
+"let g:CoffeeAutoTagDisabled=<0 or 1>     " Disables autotaging on save (Default: 0 [false])
+"let g:CoffeeAutoTagFile=<filename>       " Name of the generated tag file (Default: ./tags)
+"let g:CoffeeAutoTagIncludeVars=<0 or 1>  " Includes variables (Default: 0 [false])
+"let g:CoffeeAutoTagTagRelative=<0 or 1>  " Sets file names to the relative path from the tag file location to th
+
 map CC :CtrlPClearCache<CR>
 let g:ctrlp_max_height = 20
 let g:ctrlp_jump_to_buffer = 2 "if the file's already open somewhere (anywhere) jump to it
 let g:ctrlp_working_path_mode = 2 "try and find the repo root and search from there
+
+map <leader>b :CtrlPBuffer<CR>
 
 " SuperTab
 "autocmd FileType go let g:SuperTabDefaultCompletionType = "context"

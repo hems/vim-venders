@@ -26,6 +26,9 @@ cd ~/.vim/bundle/YouCompleteMe
 
 unset VIMDIR
 
+# TODO: fix this sudo
+sudo gem install CoffeeTags
+
 echo
 echo 'Done.'
 echo
