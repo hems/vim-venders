@@ -51,7 +51,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'junegunn/vim-easy-align'
 
 "Bundle 'jpalardy/vim-slime'
-Plug 'mklabs/split-term.vim'
+"Bundle 'mklabs/split-term.vim'
 
 " hems remix
 
