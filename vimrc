@@ -3,6 +3,7 @@
 " All UTF-8 all the time
 scriptencoding utf-8
 set encoding=utf-8
+set backspace=indent,eol,start
 
 " Initialize Vundle
 set nocompatible
@@ -48,6 +49,9 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'vobornik/vim-mql4'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'junegunn/vim-easy-align'
+
+"Bundle 'jpalardy/vim-slime'
+Plug 'mklabs/split-term.vim'
 
 " hems remix
 
