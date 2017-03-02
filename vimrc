@@ -50,6 +50,8 @@ Bundle 'vobornik/vim-mql4'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'junegunn/vim-easy-align'
 
+Bundle 'rking/ag.vim'
+
 "Bundle 'jpalardy/vim-slime'
 "Bundle 'mklabs/split-term.vim'
 
