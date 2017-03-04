@@ -88,7 +88,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-"set clipboard+=unnamed "yanks and pastes use the clipboard instead
+set clipboard+=unnamed "yanks and pastes use the clipboard instead
 "set foldlevelstart=99 "no folds, please
 set timeoutlen=250 "time to wait for a command (after leader, for example)
 set hidden "change buffer without saving
