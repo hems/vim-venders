@@ -59,6 +59,7 @@ Bundle 'rking/ag.vim'
 
 " Q will quit if not in edit mode
 map Q  :wa<CR>:q<CR>
+map W  :wa<CR>:w<CR>
 map ff :NERDTreeToggle<CR>
 
 " end of
