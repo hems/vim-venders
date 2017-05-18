@@ -9,7 +9,7 @@ There’s a setup script included that will create a bunch of directories in
 `~/.vim/gvimrc` respectively, and install a bunch of plugins. Checkout and
 setup like so:
 
-    git clone https://github.com/roshambo/vim-venders.git ~/.vim
+    git clone https://github.com/hems/vim-venders.git ~/.vim
     cd ~/.vim
     ./setup
 
