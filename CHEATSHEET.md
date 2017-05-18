@@ -1,4 +1,4 @@
-TRL+P
+CTRL+P
   -> Fuzzy Find
 
   SHIFT+CC # clear CTRL+P cache
