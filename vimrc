@@ -209,6 +209,12 @@ let mapleader=','
 imap kj <Esc>
 vmap kj <Esc>
 
+" can press <Tab> as well!
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+inoremap <Tab> <Esc>`^
+inoremap <Leader><Tab> <Tab>
 " Show registers
 map <Leader>r :registers<CR>
 
