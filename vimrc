@@ -207,6 +207,7 @@ let mapleader=','
 
 " Escape key alternatives
 imap kj <Esc>
+vmap kj <Esc>
 
 " Show registers
 map <Leader>r :registers<CR>
