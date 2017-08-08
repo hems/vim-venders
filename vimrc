@@ -53,6 +53,12 @@ Bundle 'junegunn/vim-easy-align'
 
 Bundle 'rking/ag.vim'
 
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
 "Bundle 'jpalardy/vim-slime'
 "Bundle 'mklabs/split-term.vim'
 
@@ -90,6 +96,14 @@ map <C-v> pi
 imap <C-v> <Esc>pi
 imap <C-z> <Esc>ui
 
+
+" borrowed from rocha again!
+" UtliSnips
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+let g:UltiSnipsEditSplit='vertical'
+let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 " end of remix!
 
 
@@ -210,11 +224,11 @@ imap kj <Esc>
 vmap kj <Esc>
 
 " can press <Tab> as well!
-nnoremap <Tab> <Esc>
-vnoremap <Tab> <Esc>gV
-onoremap <Tab> <Esc>
-inoremap <Tab> <Esc>`^
-inoremap <Leader><Tab> <Tab>
+"nnoremap <Tab> <Esc>
+"vnoremap <Tab> <Esc>gV
+"onoremap <Tab> <Esc>
+"inoremap <Tab> <Esc>`^
+"inoremap <Leader><Tab> <Tab>
 " Show registers
 map <Leader>r :registers<CR>
 
