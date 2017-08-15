@@ -90,11 +90,11 @@ imap <S-Left> <Esc>v<Left>
 imap <S-Right> <Esc>v<Right>
 
 " try to implement cut/paste with C-c/x/v
-vmap <C-c> y<Esc>i
-vmap <C-x> d<Esc>i
-map <C-v> pi
-imap <C-v> <Esc>pi
-imap <C-z> <Esc>ui
+"vmap <C-c> y<Esc>i
+"vmap <C-x> d<Esc>i
+"map <C-v> pi
+"imap <C-v> <Esc>pi
+"imap <C-z> <Esc>ui
 
 
 " borrowed from rocha again!
