@@ -53,11 +53,12 @@ Bundle 'junegunn/vim-easy-align'
 
 Bundle 'rking/ag.vim'
 
+Bundle 'roman/golden-ratio'
 " Track the engine.
-Plugin 'SirVer/ultisnips'
+Bundle 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+Bundle 'honza/vim-snippets'
 
 "Bundle 'jpalardy/vim-slime'
 "Bundle 'mklabs/split-term.vim'
@@ -245,6 +246,17 @@ let mapleader=','
 " Escape key alternatives
 imap kj <Esc>
 vmap kj <Esc>
+
+" remapping vim-multiple-cursors
+"let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+"let g:multi_cursor_next_key='<C-n>'
+"let g:multi_cursor_prev_key='<C-p>'
+"let g:multi_cursor_skip_key='<C-x>'
+"let g:multi_cursor_quit_key='kj'
+
+"let g:multi_cursor_quit_key='kj'
 
 " can press <Tab> as well!
 "nnoremap <Tab> <Esc>
