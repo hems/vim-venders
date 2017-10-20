@@ -57,12 +57,12 @@ Bundle 'rking/ag.vim'
 "Bundle 'mklabs/split-term.vim'
 
 " hems remix
+nnoremap <space> i<space><right><esc>
 
 " Q will quit if not in edit mode
 map Q  :wa<CR>:q<CR>
 map W  :wa<CR>:w<CR>
 map ff :NERDTreeToggle<CR>
-
 " change cursor in different modes
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
