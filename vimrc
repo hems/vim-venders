@@ -53,6 +53,12 @@ Bundle 'junegunn/vim-easy-align'
 
 Bundle 'rking/ag.vim'
 
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
 "Bundle 'jpalardy/vim-slime'
 "Bundle 'mklabs/split-term.vim'
 
@@ -68,7 +74,60 @@ let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
-" end of
+" make SHIFT arrows work as expected when selecting text?
+" check stackoverflow: https://stackoverflow.com/questions/9721732/mapping-shift-arrows-to-selecting-characters-lines
+nmap <S-Up> v<Up>
+nmap <S-Down> v<Down>
+nmap <S-Left> v<Left>
+nmap <S-Right> v<Right>
+vmap <S-Up> <Up>
+vmap <S-Down> <Down>
+vmap <S-Left> <Left>
+vmap <S-Right> <Right>
+imap <S-Up> <Esc>v<Up>
+imap <S-Down> <Esc>v<Down>
+imap <S-Left> <Esc>v<Left>
+imap <S-Right> <Esc>v<Right>
+
+" try to implement cut/paste with C-c/x/v
+"vmap <C-c> y<Esc>i
+"vmap <C-x> d<Esc>i
+"map <C-v> pi
+"imap <C-v> <Esc>pi
+"imap <C-z> <Esc>ui
+
+
+" borrowed from rocha again!
+" UtliSnips
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+let g:UltiSnipsEditSplit='vertical'
+let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
+
+" UltiSnips completion function that tries to expand a snippet. If there's no
+" snippet for expanding, it checks for completion window and if it's
+" shown, selects first element. If there's no completion window it tries to
+" jump to next placeholder. If there's no placeholder it just returns TAB key
+"
+" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-15451411
+function! g:UltiSnips_Complete()
+    call UltiSnips_ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips_JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+               return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+
+exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+" end of remix!
 
 
 " Enable filetype-specific indenting, syntax, and plugins
@@ -185,7 +244,14 @@ let mapleader=','
 
 " Escape key alternatives
 imap kj <Esc>
+vmap kj <Esc>
 
+" can press <Tab> as well!
+"nnoremap <Tab> <Esc>
+"vnoremap <Tab> <Esc>gV
+"onoremap <Tab> <Esc>
+"inoremap <Tab> <Esc>`^
+"inoremap <Leader><Tab> <Tab>
 " Show registers
 map <Leader>r :registers<CR>
 
