@@ -65,6 +65,9 @@ Plugin 'honza/vim-snippets'
 " hems remix
 nnoremap <space> i<space><right><esc>
 
+:tnoremap <Esc> <C-\><C-n>
+:tnoremap kj <C-\><C-n>
+
 " Q will quit if not in edit mode
 map Q  :wa<CR>:q<CR>
 map W  :wa<CR>:w<CR>
