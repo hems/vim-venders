@@ -12,6 +12,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+
+Bundle 'supercollider/scvim'
+
 " Bundles
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
@@ -52,6 +55,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'junegunn/vim-easy-align'
 
 Bundle 'rking/ag.vim'
+Bundle 'JarrodCTaylor/vim-js2coffee'
 
 " Track the engine.
 Plugin 'SirVer/ultisnips'
@@ -67,6 +71,7 @@ nnoremap <space> i<space><right><esc>
 
 :tnoremap <Esc> <C-\><C-n>
 :tnoremap kj <C-\><C-n>
+
 
 " Q will quit if not in edit mode
 map Q  :wa<CR>:q<CR>
@@ -139,6 +144,9 @@ syntax on
 
 set t_Co=256
 colorscheme roshambo
+
+" transparent background
+hi Normal guibg=NONE ctermbg=NONE
 
 " Vim 7.3 and newer can persist undo history across sessions
 if v:version >= 703
@@ -276,6 +284,8 @@ nmap BD :wa<CR>:bdelete<CR>
 
 " Remove empty buffers
 function! g:CleanEmptyBuffers()
+
+
   let buffers = filter(range(0, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0')
   if !empty(buffers)
   exe 'bw '.join(buffers, ' ')

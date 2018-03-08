@@ -360,12 +360,12 @@ hi coffeeSpecialVar             ctermfg=43 guifg=#3be8c7
 hi coffeeObject                 ctermfg=231 cterm=bold,underline guifg=#ffffff gui=bold,underline
 hi coffeeObjAssign              ctermfg=39 guifg=#00b9ff
 hi coffeeSpecialIdent           ctermfg=44 guifg=#3dc7cf
-hi coffeeComment                ctermfg=29 guifg=#1d915e gui=italic
+hi coffeeComment                ctermfg=02 guifg=#ccff00 gui=italic
 hi coffeeFunction               ctermfg=67 guifg=#4974ac
 hi coffeeOperator               ctermfg=203 guifg=#f8585b
-hi coffeeAssignBrackets         ctermfg=193 guifg=#e7ffb2
-hi coffeeConstant               ctermfg=81 cterm=bold guifg=#66ccff gui=bold"{{{
-hi coffeeNumber                 ctermfg=81 cterm=bold guifg=#66ccff gui=bold"{{{"}}}"}}}
+hi coffeeAssignBrackets         ctermfg=193 guifg=#e7ffb2"{{{
+hi coffeeConstant               ctermfg=81 cterm=bold guifg=#66ccff gui=bold"{{{{{{
+hi coffeeNumber                 ctermfg=81 cterm=bold guifg=#66ccff gui=bold"{{{"}}}"}}}}}}}}}
 hi coffeeFloat                  ctermfg=81 cterm=bold guifg=#66ccff gui=bold
 "hi coffeePrototype guifg=#e9e9e9 gui=bold
 "hi coffeeDot guifg=#e9e9e9 gui=bold
