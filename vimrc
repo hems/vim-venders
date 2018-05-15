@@ -104,6 +104,11 @@ imap <S-Right> <Esc>v<Right>
 "imap <C-v> <Esc>pi
 "imap <C-z> <Esc>ui
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " borrowed from rocha again!
 " UtliSnips
