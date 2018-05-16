@@ -57,7 +57,6 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'rking/ag.vim'
 Bundle 'JarrodCTaylor/vim-js2coffee'
 
-Bundle 'roman/golden-ratio'
 " Track the engine.
 Bundle 'SirVer/ultisnips'
 
