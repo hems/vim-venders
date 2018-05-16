@@ -12,6 +12,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+
+Bundle 'supercollider/scvim'
+
 " Bundles
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
@@ -52,6 +55,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'junegunn/vim-easy-align'
 
 Bundle 'rking/ag.vim'
+Bundle 'JarrodCTaylor/vim-js2coffee'
 
 Bundle 'roman/golden-ratio'
 " Track the engine.
@@ -64,12 +68,16 @@ Bundle 'honza/vim-snippets'
 "Bundle 'mklabs/split-term.vim'
 
 " hems remix
+nnoremap <space> i<space><right><esc>
+
+:tnoremap <Esc> <C-\><C-n>
+:tnoremap kj <C-\><C-n>
+
 
 " Q will quit if not in edit mode
 map Q  :wa<CR>:q<CR>
 map W  :wa<CR>:w<CR>
 map ff :NERDTreeToggle<CR>
-
 " change cursor in different modes
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
@@ -97,38 +105,39 @@ imap <S-Right> <Esc>v<Right>
 "imap <C-v> <Esc>pi
 "imap <C-z> <Esc>ui
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " borrowed from rocha again!
 " UtliSnips
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+"let g:UltiSnipsExpandTrigger='<tab>'
+"let g:UltiSnipsJumpForwardTrigger='<tab>'
+"let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 let g:UltiSnipsEditSplit='vertical'
 let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 
-" UltiSnips completion function that tries to expand a snippet. If there's no
-" snippet for expanding, it checks for completion window and if it's
-" shown, selects first element. If there's no completion window it tries to
-" jump to next placeholder. If there's no placeholder it just returns TAB key
-"
-" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-15451411
+" YCM + Snippets
+"UltiSnips"{
 function! g:UltiSnips_Complete()
-    call UltiSnips_ExpandSnippet()
+    call UltiSnips#ExpandSnippet()
     if g:ulti_expand_res == 0
         if pumvisible()
-            return "\<C-n>"
+            return "\<c-n>"
         else
-            call UltiSnips_JumpForwards()
+            call UltiSnips#JumpForwards()
             if g:ulti_jump_forwards_res == 0
-               return "\<TAB>"
+               return "\<tab>"
             endif
         endif
     endif
     return ""
 endfunction
-
-exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-" end of remix!
+autocmd BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <c-r>=g:UltiSnips_Complete()<cr>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-e>"
 
 
 " Enable filetype-specific indenting, syntax, and plugins
@@ -137,6 +146,9 @@ syntax on
 
 set t_Co=256
 colorscheme roshambo
+
+" transparent background
+hi Normal guibg=NONE ctermbg=NONE
 
 " Vim 7.3 and newer can persist undo history across sessions
 if v:version >= 703
@@ -285,6 +297,8 @@ nmap BD :wa<CR>:bdelete<CR>
 
 " Remove empty buffers
 function! g:CleanEmptyBuffers()
+
+
   let buffers = filter(range(0, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0')
   if !empty(buffers)
   exe 'bw '.join(buffers, ' ')
