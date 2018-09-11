@@ -69,6 +69,7 @@ Bundle 'honza/vim-snippets'
 
 " hems remix
 nnoremap <space> i<space><right><esc>
+nnoremap subl :exe ':silent !subl % &'<enter>:redraw!<enter>
 
 :tnoremap <Esc> <C-\><C-n>
 :tnoremap kj <C-\><C-n>
