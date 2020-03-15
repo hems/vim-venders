@@ -12,8 +12,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-
+Bundle 'evanleck/vim-svelte'
 Bundle 'supercollider/scvim'
+Bundle 'tomlion/vim-solidity'
 
 " Bundles
 Bundle 'kien/ctrlp.vim'
